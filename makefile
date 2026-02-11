@@ -436,6 +436,8 @@ ifeq (${WIN32},)  #*nix Environments (&& cygwin)
       ifeq (Linux,$(OSTYPE))
         ifeq (Android,$(shell uname -o))
           OS_CCDEFS += -D__ANDROID_API__=$(shell getprop ro.build.version.sdk) -DSIM_BUILD_OS=" On Android Version $(shell getprop ro.build.version.release)"
+        else
+          OS_CCDEFS += -D_LARGEFILE64_SOURCE
         endif
         ifneq (lib,$(findstring lib,$(UNSUPPORTED_BUILD)))
           ifeq (Android,$(shell uname -o))
@@ -3038,4 +3040,5 @@ ${BIN}frontpaneltest${EXE} : frontpanel/FrontPanelTest.c sim_sock.c sim_frontpan
 	#cmake:ignore-target
 	${MKDIRBIN}
 	${CC} frontpanel/FrontPanelTest.c sim_sock.c sim_frontpanel.c ${CC_OUTSPEC} ${LDFLAGS} ${OS_CURSES_DEFS}
+
 
