@@ -492,7 +492,7 @@ if (NULL == _sim_expand_homedir (file, namebuf, sizeof (namebuf)))
 #if defined (VMS)
 f = fopen (namebuf, mode, "ALQ=32", "DEQ=4096",
                           "MBF=6", "MBC=127", "FOP=cbt,tef", "ROP=rah,wbh", "CTX=stm");
-#elif (defined (__linux) || defined (__linux__) || defined (__hpux) || defined (_AIX)) && !defined (DONT_DO_LARGEFILE)
+#elif (defined (__hpux) || defined (_AIX)) && !defined (DONT_DO_LARGEFILE)
 f = fopen64 (namebuf, mode);
 #else
 f = fopen (namebuf, mode);
@@ -558,12 +558,12 @@ return (t_offset)_ftelli64 (st);
 #define S_SIM_IO_FSEEK_EXT_ 1
 int sim_fseeko (FILE *st, t_offset xpos, int origin)
 {
-return fseeko64 (st, (off64_t)xpos, origin);
+return fseeko (st, (off64_t)xpos, origin);
 }
 
 t_offset sim_ftell (FILE *st)
 {
-return (t_offset)(ftello64 (st));
+return (t_offset)(ftello (st));
 }
 
 #endif                                                  /* end Linux with LFS */

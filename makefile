@@ -436,9 +436,8 @@ ifeq (${WIN32},)  #*nix Environments (&& cygwin)
       ifeq (Linux,$(OSTYPE))
         ifeq (Android,$(shell uname -o))
           OS_CCDEFS += -D__ANDROID_API__=$(shell getprop ro.build.version.sdk) -DSIM_BUILD_OS=" On Android Version $(shell getprop ro.build.version.release)"
-        else
-          OS_CCDEFS += -D_LARGEFILE64_SOURCE
         endif
+        OS_CCDEFS += -D_FILE_OFFSET_BITS=64
         ifneq (lib,$(findstring lib,$(UNSUPPORTED_BUILD)))
           ifeq (Android,$(shell uname -o))
             ifneq (,$(shell if ${TEST} -d ${PREFIX}/lib; then echo prefixlib; fi))
