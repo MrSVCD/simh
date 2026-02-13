@@ -2230,8 +2230,8 @@ ALL = pdp1 pdp4 pdp7 pdp8 pdp9 pdp15 pdp11 pdp10 \
 	i7094 ibm1130 id16 id32 sds lgp h316 cdc1700 \
 	swtp6800mp-a swtp6800mp-a2 tx-0 ssem b5500 intel-mds \
 	scelbi 3b2 3b2-700 i701 i704 i7010 i7070 i7080 i7090 \
-	sigma uc15 pdp10-ka pdp10-ki pdp10-kl pdp10-ks pdp6 i650 \
-	imlac linc tt2500 sel32
+	sigma uc15 pdp6 i650 imlac linc tt2500 sel32
+# pdp10-ka pdp10-ki pdp10-kl pdp10-ks
 
 all : ${ALL}
 
