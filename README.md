@@ -1,3 +1,22 @@
+# Open SIMH for Alpine Linux
+
+This is a modification of Open SIMH to get it to work at Alpine Linux/with musl libc.
+
+I have built this version on:
+
+* Ubuntu 24.04 x86_64
+* Alpine 3.23.3 x86
+* Alpine 3.23.3 x86_64 where PDP10-ka,-ki,-kl and -ks fails for some reason that I don't understand. PDP10 builds. (Help please)
+
+Because of the above mentioned build failures the PDP10 variants they have been removed from the `all` part of the makefile, aka just typing `make`
+
+ToDo: 
+
+* Convert all the text to unix line endings
+* Remove or fix Cmake since it doesn't work on Alpine Linux
+
+# Orignial Readme.md:
+
 # Open SIMH machine simulator
 
 This is the codebase of SIMH, a framework and collection of computer system simulators.
