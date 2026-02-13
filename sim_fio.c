@@ -558,7 +558,7 @@ return (t_offset)_ftelli64 (st);
 #define S_SIM_IO_FSEEK_EXT_ 1
 int sim_fseeko (FILE *st, t_offset xpos, int origin)
 {
-return fseeko (st, (off64_t)xpos, origin);
+return fseeko (st, (off_t)xpos, origin);
 }
 
 t_offset sim_ftell (FILE *st)
@@ -1580,4 +1580,5 @@ if (n != 0) {
         }
 return (s - src - 1);               /* count does not include NUL */
 }
+
 
